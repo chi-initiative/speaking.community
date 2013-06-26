@@ -37,7 +37,7 @@ function _getDomain(data, axis) {
       return d !== undefined && d !== null;
     })
     .value()
-    .sort(d3.ascending);
+    //.sort(d3.ascending);
 }
 
 function ordinal(data, axis, bounds, spacing) {
@@ -403,7 +403,7 @@ var _scales = {
       .style('opacity', 0)
       .attr('cx', storage.lineX)
       .attr('cy', storage.lineY)
-      .attr('r', 5)
+      .attr('r', 4)
       .on('mouseover', callbacks.mouseover)
       .on('mouseout', callbacks.mouseout)
       .on('click', callbacks.click);
@@ -755,10 +755,10 @@ _.defaults(xChart.prototype, {
         return np;
       })
         .sort(function (a, b) {
-          if (!a.x && !b.x) {
+          if (!a.y && !b.y) {
             return 0;
           }
-          return (a.x < b.x) ? -1 : 1;
+          return (a.y > b.y) ? -1 : 1;
         });
       return _.extend(_.clone(set), { data: d });
     }
@@ -892,7 +892,7 @@ _.defaults(xChart.prototype, {
       .tickFormat(o.tickFormatX)
       .orient('bottom');
 
-    xAxis = self._gScale.selectAll('g.axisX')
+    /*xAxis = self._gScale.selectAll('g.axisX')
       .data(emptyData);
 
     xAxis.enter().append('g')
@@ -915,7 +915,7 @@ _.defaults(xChart.prototype, {
           return i % (Math.ceil(labels.length / xTicks) + 1);
         })
         .remove();
-    }
+    }*/
 
     yRules = d3.svg.axis()
       .scale(self.yScale)
