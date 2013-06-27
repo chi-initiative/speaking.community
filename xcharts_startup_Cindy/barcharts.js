@@ -912,7 +912,7 @@ _.defaults(xChart.prototype, {
 
       d3.selectAll(labels)
         .filter(function (d, i) {
-          return i % (Math.ceil(labels.length / xTicks) -1);
+          return i % (Math.ceil(labels.length / xTicks));
         })
         .remove();
     }
