@@ -1,6 +1,13 @@
 {
 
 	"HTMLFileName":"comdevviz3.html",
+	"CompZoomFactor":"100",
+	"usedBOM":"false",
+	"symbol_stage":{
+		"element_${_legend_commdev}":{
+			"animationEnabled":"false",
+			"invisible":"false"}},
+	"stage-Default Timeline_playhead_ms":"0",
 	"ModelData":"{\
 \"stage\": {\
    \"timelines\": {\
@@ -16,12 +23,5 @@
 \
    }}\
 }",
-	"usedBOM":"false",
-	"symbol_stage":{
-		"element_${_legend_commdev}":{
-			"animationEnabled":"false",
-			"invisible":"false"}},
-	"stage-Default Timeline_playhead_ms":"0",
-	"CompZoomFactor":"100",
-	"StageZoomFactor":"100",
-	"viewStartY":"0"}
+	"viewStartY":"0",
+	"StageZoomFactor":"100"}

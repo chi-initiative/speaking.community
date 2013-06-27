@@ -24,7 +24,7 @@ var symbols = {
          {
             id:'legend_commdev3',
             type:'image',
-            rect:['14%','32px','25%','355px','auto','auto'],
+            rect:['10%','20px','25%','355px','auto','auto'],
             fill:["rgba(0,0,0,0)",im+"legend_commdev3.png",'0px','0px']
          }],
          symbolInstances: [
@@ -34,8 +34,8 @@ var symbols = {
    states: {
       "Base State": {
          "${_legend_commdev3}": [
-            ["style", "top", '32px'],
-            ["style", "left", '14%'],
+            ["style", "top", '20px'],
+            ["style", "left", '10%'],
             ["style", "width", '25%']
          ]
       }
