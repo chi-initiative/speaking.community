@@ -892,7 +892,7 @@ _.defaults(xChart.prototype, {
       .tickFormat(o.tickFormatX)
       .orient('bottom');
 
-    /*xAxis = self._gScale.selectAll('g.axisX')
+    xAxis = self._gScale.selectAll('g.axisX')
       .data(emptyData);
 
     xAxis.enter().append('g')
@@ -912,10 +912,10 @@ _.defaults(xChart.prototype, {
 
       d3.selectAll(labels)
         .filter(function (d, i) {
-          return i % (Math.ceil(labels.length / xTicks) + 1);
+          return i % (Math.ceil(labels.length / xTicks) -1);
         })
         .remove();
-    }*/
+    }
 
     yRules = d3.svg.axis()
       .scale(self.yScale)
