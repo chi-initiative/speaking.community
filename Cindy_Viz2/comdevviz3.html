@@ -7,19 +7,25 @@
 
 	<script src="d3.v2.min.js"></script>
 	<script src="xcharts.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
 </head>
 
 <body>
 
-<figure  id="myChart" style='height:500px'; 'width:500px' ></figure>
+<figure  class="xchart" id="myChart" style='height:500px'; 'width:500px' ></figure>
 
 <script>
+var tt = document.createElement('div'),
+  leftOffset = -(~~$('html').css('padding-left').replace('px', '') + ~~$('body').css('margin-left').replace('px', '')),
+  topOffset = -32;
+tt.className = 'tooltip';
+document.body.appendChild(tt);
 
 var data = {  
       "main": [
         {
-          "label": "Urban Planning",
+          "label": "UrbanPlanning",
           "data": [
             {
               "x": "1950-1960",
@@ -76,13 +82,13 @@ var data = {
               "y": 18
             },
           ],
-          "className": ".Infrastructure"
+          "className": ".comp.Infrastructure"
         },{
-          "label": "Urban Planning",
+          "label": "EducationCommunityOutreach",
           "data": [
             {
               "x": "1950-1960",
-              "y": 1
+              "y": 0
             },
             {
               "x": "1961-1970",
@@ -90,28 +96,86 @@ var data = {
             },
             {
               "x": "1971-1980",
-              "y": 10
+              "y": 1
             },
             {
               "x": "1981-1990",
-              "y": 7
+              "y": 2
             },
           	{
               "x": "1991-2000",
-              "y": 15
+              "y": 5
             },
             {
               "x": "2001-2013",
-              "y": 15
+              "y": 10
             },
           ],
-          "className": ".UrbanPlanning"
+          "className": ".comp.EducationCommunityOutreach"
         },{
-          "label": "Urban Planning",
+          "label": "CommunityHealth",
           "data": [
             {
               "x": "1950-1960",
+              "y": 0
+            },
+            {
+              "x": "1961-1970",
+              "y": 3
+            },
+            {
+              "x": "1971-1980",
+              "y": 3
+            },
+            {
+              "x": "1981-1990",
+              "y": 3
+            },
+          	{
+              "x": "1991-2000",
+              "y": 3
+            },
+            {
+              "x": "2001-2013",
               "y": 1
+            },
+          ],
+          "className": ".comp.CommunityHealth"
+        },{
+          "label": "Sustainability",
+          "data": [
+            {
+              "x": "1950-1960",
+              "y": 0
+            },
+            {
+              "x": "1961-1970",
+              "y": 3
+            },
+            {
+              "x": "1971-1980",
+              "y": 3
+            },
+            {
+              "x": "1981-1990",
+              "y": 9
+            },
+          	{
+              "x": "1991-2000",
+              "y": 6
+            },
+            {
+              "x": "2001-2013",
+              "y": 17
+            },
+          ],
+          "className": ".comp.Sustainability"
+        },{
+          "label": "Livelihood",
+          "data": [
+            {
+              "x": "1950-1960",
+              "y": 0
             },
             {
               "x": "1961-1970",
@@ -119,86 +183,40 @@ var data = {
             },
             {
               "x": "1971-1980",
-              "y": 10
-            },
-            {
-              "x": "1981-1990",
-              "y": 7
-            },
-          	{
-              "x": "1991-2000",
-              "y": 15
-            },
-            {
-              "x": "2001-2013",
-              "y": 15
-            },
-          ],
-          "className": ".UrbanPlanning"
-        },{
-          "label": "Urban Planning",
-          "data": [
-            {
-              "x": "1950-1960",
               "y": 1
             },
             {
-              "x": "1961-1970",
-              "y": 2
-            },
-            {
-              "x": "1971-1980",
-              "y": 10
-            },
-            {
               "x": "1981-1990",
-              "y": 7
+              "y": 6
             },
           	{
               "x": "1991-2000",
-              "y": 15
+              "y": 11
             },
             {
               "x": "2001-2013",
-              "y": 15
+              "y": 9
             },
           ],
-          "className": ".UrbanPlanning"
-        },{
-          "label": "Urban Planning",
-          "data": [
-            {
-              "x": "1950-1960",
-              "y": 1
-            },
-            {
-              "x": "1961-1970",
-              "y": 2
-            },
-            {
-              "x": "1971-1980",
-              "y": 10
-            },
-            {
-              "x": "1981-1990",
-              "y": 7
-            },
-          	{
-              "x": "1991-2000",
-              "y": 15
-            },
-            {
-              "x": "2001-2013",
-              "y": 15
-            },
-          ],
-          "className": ".UrbanPlanning"
+          "className": ".comp.Livelihood"
 
 		},
+		],
       "xScale": "ordinal",
       "yScale": "linear",
-      },
-  chart = new xChart('line-dotted', data, '#myChart');
+      };
+      var opts = {
+  "mouseover": function (d, i) {
+    var pos = $(this).offset();
+    $(tt).text(d.x + ': ' + d.y + ' Occurrences')
+      .css({top: topOffset + pos.top, left: pos.left + leftOffset})
+      .show();
+  },
+  "mouseout": function (x) {
+    $(tt).hide();
+  }
+  };
+  chart = new xChart('bar', data, '#myChart', opts);
   </script>
 </body>
 </html>
