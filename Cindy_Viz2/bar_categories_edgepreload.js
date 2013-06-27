@@ -52,8 +52,8 @@ if(document.addEventListener ){
    aLoader = [
     { load: "edge_includes/jquery-1.7.1.min.js"},
     { load: "edge_includes/edge.2.0.0.min.js"},
-          { load: "comdevviz3_edge.js"},
-          { load: "comdevviz3_edgeActions.js"}];
+          { load: "bar_categories_edge.js"},
+          { load: "bar_categories_edgeactions.js"}];
 
 if (AdobeEdge.bootstrapLoading) { signaledLoading = true; AdobeEdge.loadResources=doLoadResources; AdobeEdge.playWhenReady=playWhenReady; }
 
