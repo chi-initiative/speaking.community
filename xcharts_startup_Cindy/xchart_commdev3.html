@@ -29,49 +29,96 @@ var data = {
       
       "main": [
         {
-          "className": ".Urban Planning",
+          "label": "Urban Planning",
           "data": [
             {
               "x": "Beautification",
               "y": 37
             },
-			{
-              "x": "Arts",
-              "y": 2
-
+            			{
+              "x": "Housing",
+              "y": 36
             },
-            
+    	{
+              "x": "Public Safety",
+              "y": 13
+            },
+        		{
+              "x": "Transportation",
+              "y": 6
+            },      
+            ],
+        "className": ".urbanplanning"            
+             {
+          "label": "financial & legal",
+          "data": [
 			{
               "x": "Business",
               "y": 29
+
             },
 			{
               "x": "City Services",
               "y": 12
             },
 			{
-              "x": "Civic Engagement",
-              "y": 7
+              "x": "Legal Assistance",
+              "y": 3
             },
+			
+            {
+              "x": "Investment",
+              "y": 16
+            },
+                 
+            ],
+        "className": ".comp.financiallegal"   
+             },      
+            ],          
+             {
+          "label": "Education & Outreach",
+          "data": [
+			 
 			{
               "x": "Education",
               "y": 35
             },
-			
+		
+			{
+              "x": "Civic Engagement",
+              "y": 7
+            },
+          
+                 
+            ],
+        "className": ".comp.education"   
+           
+			   },      
+            ],          
+             {
+          "label": "Sustainability",
+          "data": [
 			{
               "x": "Environmental Justice",
               "y": 17
             },
+				{
+              "x": "Sustainability",
+              "y": 32
+            },
+		
 			
 			{
-              "x": "Families",
-              "y": 3
+              "x": "Urban Farming",
+              "y": 19
             },
-			
-			{
-              "x": "Food",
-              "y": 17
-            },
+		],
+		"classname": ".comp.sustainability",
+			   },      
+            ],          
+             {
+          "label": "Community Health",
+          "data": [
 			
 			{
               "x": "Health",
@@ -82,66 +129,45 @@ var data = {
               "x": "Homelessness",
               "y": 6
             },
-			
+		
 			{
-              "x": "Housing",
-              "y": 36
+              "x": "Rehabilitation",
+              "y": 6
             },
-			
-			{
-              "x": "Investment",
-              "y": 16
+					],
+			"classname": ".comp.communityhealth",
+				 },      
+            ],          
+             {
+          "label": "Livelihood",
+          "data": [
+				{
+              "x": "Food",
+              "y": 17
             },
 			
 			{
               "x": "Job & Life Skills",
               "y": 13
             },
-			
-			{
-              "x": "Legal Assistance",
-              "y": 3
-            },
-			
-			{
-              "x": "Public Safety",
-              "y": 13
-            },
-			
-			{
-              "x": "Rehabilitation",
-              "y": 6
-            },
-			
 			{
               "x": "Seniors",
               "y": 2
-            },
-			
-			{
-              "x": "Sustainability",
-              "y": 32
-            },
-			
-			{
-              "x": "Transportation",
-              "y": 6
-            },
-			
-			{
-              "x": "Urban Farming",
-              "y": 19
+              
+              	{
+              "x": "Families",
+              "y": 3
             },
 			
 			{
               "x": "Youth",
               "y": 21
-            }
-          ]
-        }
-      ]
+            },
+          ],
+			"classname": ".comp.livelihood",
+				 },  
+      ],
 
-    };
     var opts = {
   "mouseover": function (d, i) {
     var pos = $(this).offset();
@@ -153,7 +179,7 @@ var data = {
     $(tt).hide();
   }
   };
-   var MyChart = new xChart('bar', data, '#myChart', opts);
+   var MyChart = new xChart('line', data, '#myChart', opts);
   </script>
 </body>
 </html>
