@@ -1,6 +1,7 @@
 @charset "utf-8";
 .clearfix{
-	height:1%
+	height:100%
+	width:100%
 }
 html,body{
 	font:normal 13px / 20px "Gill Sans MT",sans-serif;
