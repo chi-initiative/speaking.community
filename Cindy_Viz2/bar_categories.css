@@ -3,6 +3,11 @@
 	width:100%;
 	height:100%
 }
+html,body{
+	font:normal 13px / 20px "Gill Sans MT",sans-serif;
+	color:#0e2e42
+
+}
 .color9 .line{
 	stroke:#0e2e42
 }
@@ -90,7 +95,7 @@
 }
 .color0 rect,
 .color0 circle{
-	fill:#3880aa;
+	fill:#FFB9A3;
 	stroke-width:1px;
 }
 .color0 .fill{
@@ -107,7 +112,7 @@
 }
 .color0.comp circle,
 .color0.comp .pointer{
-	fill:#89bbd8
+	fill:#FFB9A3
 }
 .color0.comp.lineshade .fill,
 .color0.comp.lineshadeup .fill{
@@ -133,8 +138,8 @@
 	stroke-width:3px
 }
 .axis text{
-	font-family:"Gill Sans MT",Helvetica,Arial,Verdana,sans-serif;
-	fill:#000;
+	font-family:"Gill Sans MT",sans-serif;
+	fill:#0000;
 	font-size:16px;
 }
 .tooltip{
@@ -142,7 +147,7 @@
 	background:#EEE;
 	border-radius:3px;
 	padding:5px;
-	box-shadow:0 1px 3px #000;
+	box-shadow:0 1px 3px #0000;
 	border-collapse:separate;
 	display: none;
 	font-family: "Gill Sans MT";
